@@ -43,7 +43,7 @@
 				break; // Se finaliza el switch
 			
 			default:
-				echo "ERROR 404"
+				echo "ERROR 404";
 				break;
 		}
 
