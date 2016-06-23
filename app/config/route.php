@@ -39,7 +39,7 @@
 		switch ($enlace[$config->get('deep')]){
 			case '':
 				
-				echo "ALZHFINDER LANDING"
+				echo "ALZHFINDER LANDING";
 				break; // Se finaliza el switch
 			
 			default:
