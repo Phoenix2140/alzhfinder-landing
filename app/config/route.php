@@ -44,7 +44,7 @@
 
 			case 'login':
 				
-				echo "ALZHFINDER LANDING LOGIN";
+				var_dump($OPENSHIFT_MYSQL_DB_HOST);
 				break; // Se finaliza el switch
 			
 			default:
