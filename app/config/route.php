@@ -44,8 +44,8 @@
 
 			case 'login':
 				
-				echo "SERVER: ".getenv($OPENSHIFT_MYSQL_DB_HOST);
-				echo "PORT: ".getenv($OPENSHIFT_MYSQL_DB_PORT);
+				echo "SERVER: ".getenv(OPENSHIFT_MYSQL_DB_HOST);
+				echo "PORT: ".getenv(OPENSHIFT_MYSQL_DB_PORT);
 				break; // Se finaliza el switch
 			
 			default:
