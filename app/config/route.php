@@ -41,6 +41,11 @@
 				
 				echo "ALZHFINDER LANDING";
 				break; // Se finaliza el switch
+
+			case 'login':
+				
+				echo "ALZHFINDER LANDING LOGIN";
+				break; // Se finaliza el switch
 			
 			default:
 				echo "ERROR 404";
