@@ -60,7 +60,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-twitter icon-md"></i>
+                            <i class="fa fa-users icon-md"></i>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Seguimiento múltiple</h3>
@@ -71,7 +71,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-facebook icon-md"></i>
+                            <i class="fa fa-mobile icon-md"></i>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Aplicación móvil</h3>
@@ -82,7 +82,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-google-plus icon-md"></i>
+                            <i class="fa fa-info icon-md"></i>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Te mantenemos informado</h3>

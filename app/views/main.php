@@ -60,14 +60,17 @@
                 <div class="col-md-3 col-sm-6">
                     <h4>Búscanos en la redes sociales</h4>
                     <div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img src="images/blog/thumb1.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Pellentesque habitant morbi tristique senectus</a></span>
-                                <small class="muted">Posted 17 Aug 2013</small>
-                            </div>
+                        <div class="col-xs-3">
+                            <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a href=""><i class="fa fa-facebook fa-2x"></i></a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a href=""><i class="fa fa-google-plus fa-2x"></i></a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a href=""><i class="fa fa-youtube fa-2x"></i></a>
                         </div>
                     </div>  
                 </div><!--/.col-md-3-->
