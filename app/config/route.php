@@ -6,6 +6,15 @@
 	require_once($config->get('baseDir').'Router.php');
 	$ruta = new Router();
 
+	/**
+	 * Incluimos los controladores a utilizar
+	 */
+	require_once($config->get('controllersDir').'Home.php');
+	$home = new Home($config);
+
+	require_once($config->get('controllersDir').'404.php');
+	$error404 = new NotFound($config);
+
 	
 	/**
 	 * Se separan las rutas por los métodos GET y POST
@@ -39,17 +48,11 @@
 		switch ($enlace[$config->get('deep')]){
 			case '':
 				
-				echo "ALZHFINDER LANDING";
-				break; // Se finaliza el switch
-
-			case 'login':
-				
-				echo "SERVER: ".getenv(OPENSHIFT_MYSQL_DB_HOST);
-				echo "PORT: ".getenv(OPENSHIFT_MYSQL_DB_PORT);
+				$home->indexAction();
 				break; // Se finaliza el switch
 			
 			default:
-				echo "ERROR 404";
+				$error404->indexAction();
 				break;
 		}
 
@@ -62,6 +65,6 @@
 		/**
 		 * Pueden agregarse más Métodos
 		 */
-		echo "ERROR 404";
+		$error404->indexAction();
 	}
  ?>
