@@ -48,6 +48,7 @@
 
                 <div class="col-md-3 col-sm-6">
                     <h4>Newsletter</h4>
+                    <p>Mantente siempre informado sobre nuestra noticias!</p>
                     <form role="form">
                         <div class="input-group">
                             <input type="text" class="form-control" autocomplete="off" placeholder="Ingresa tu email">

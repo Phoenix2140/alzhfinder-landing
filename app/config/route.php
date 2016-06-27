@@ -15,6 +15,15 @@
 	require_once($config->get('controllersDir').'404.php');
 	$error404 = new NotFound($config);
 
+	require_once($config->get('controllersDir').'Faq.php');
+	$faq = new Faq($config);
+
+	require_once($config->get('controllersDir').'Acerca.php');
+	$acerca = new Acerca($config);
+
+	require_once($config->get('controllersDir').'Contacto.php');
+	$contacto = new Contacto($config);
+
 	
 	/**
 	 * Se separan las rutas por los métodos GET y POST
@@ -49,6 +58,21 @@
 			case '':
 				
 				$home->indexAction();
+				break; // Se finaliza el switch
+
+			case 'acerca':
+				
+				$acerca->indexAction();
+				break; // Se finaliza el switch
+
+			case 'faq':
+				
+				$faq->indexAction();
+				break; // Se finaliza el switch
+
+			case 'contacto':
+				
+				$contacto->indexAction();
 				break; // Se finaliza el switch
 			
 			default:

@@ -1,10 +1,6 @@
 <?php 
-	/**
-	 * Controlador de ejemplo Home llamado desde las rutas
-	 * Solo hace uso básico de las vistas y un acceso 
-	 * simple a base de datos
-	 */
-	class Home{
+	
+	class Contacto{
 		private $config;
 		private $view;
 
@@ -34,7 +30,7 @@
 			 */
 			$this->view->titulo = "Alzhfinder | Localiza a tus seres queridos donde sea";
 			$this->view->baseUrl = $this->config->get("baseUrl");
-			$this->view->navVar = "home";
+			$this->view->navVar = "contacto";
 
 			/**
 			 * Se crea una variable (especial) que contiene una vista
@@ -42,7 +38,7 @@
 			 */
 			$this->view->menu = $this->view->render($this->config->get('viewsDir').'landing/menu.php');
 
-			$this->view->content = $this->view->render($this->config->get('viewsDir').'landing/home.php');
+			$this->view->content = $this->view->render($this->config->get('viewsDir').'landing/contacto.php');
 
 			/**
 			 * Luego se genera y junta toda la vista en 

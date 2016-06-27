@@ -47,10 +47,10 @@
             </div><!--/.carousel-inner-->
         </div><!--/.carousel-->
         <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
-            <i class="icon-angle-left"></i>
+            <i class="fa fa-angle-left"></i>
         </a>
         <a class="next hidden-xs" href="#main-slider" data-slide="next">
-            <i class="icon-angle-right"></i>
+            <i class="fa fa-angle-right"></i>
         </a>
     </section><!--/#main-slider-->
 

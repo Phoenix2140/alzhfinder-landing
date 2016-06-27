@@ -1,6 +1,6 @@
 <?php 
 	/**
-	 * Controlador de ejemplo Home llamado desde las rutas
+	 * Controlador de ejemplo 404 llamado desde las rutas
 	 * Solo hace uso básico de las vistas y un acceso 
 	 * simple a base de datos
 	 */
@@ -34,6 +34,7 @@
 			 */
 			$this->view->titulo = "Alzhfinder | Localiza a tus seres queridos donde sea";
 			$this->view->baseUrl = $this->config->get("baseUrl");
+			$this->view->navVar = "404";
 
 			/**
 			 * Se crea una variable (especial) que contiene una vista
