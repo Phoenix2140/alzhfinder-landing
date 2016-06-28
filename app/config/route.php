@@ -24,6 +24,9 @@
 	require_once($config->get('controllersDir').'Contacto.php');
 	$contacto = new Contacto($config);
 
+	require_once($config->get('controllersDir').'Newsletter.php');
+	$newsletter = new Newsletter($config);
+
 	
 	/**
 	 * Se separan las rutas por los métodos GET y POST
@@ -85,6 +88,21 @@
 		 * No está implementado, pero es similar a los pasos del
 		 * Método GET con el switch
 		 */
+		$enlace = $ruta->enlace();
+		switch ($enlace[$config->get('deep')]) {
+			case 'contacto':
+				
+				$contacto->createContact($_POST);
+				break;
+			case 'news':
+				//Crear Controlador News
+				$newsletter->ingresarEmail($_POST);
+				
+				break;
+			default:
+				echo json_encode(array('response' => false));
+				break;
+		}
 	}else{
 		/**
 		 * Pueden agregarse más Métodos

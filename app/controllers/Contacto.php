@@ -48,7 +48,25 @@
 			 */
 			echo $this->view->render($this->config->get('viewsDir').'main.php');
 
+		}
 
+		public function createContact($post){
+			if($this->validateContact($post)){
+
+
+				echo json_encode(array('result' => true));
+			}else{
+				echo json_encode(array('result' => false));
+			}
+		}
+
+		public function validateContact($post){
+			if (isset($post["nombre"]) && isset($post["email"]) && isset($post["fono"]) && isset($post["mensaje"])) {
+				return true;
+			} else {
+				return false;
+			}
+			
 		}
 	}
  ?>

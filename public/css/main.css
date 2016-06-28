@@ -1087,3 +1087,8 @@ ul.faq li > div h3 {
   margin-top: 150px;
   margin-bottom: 150px;
 }
+
+/*Estilo de Phoenix*/
+#post-msg-news{
+  margin-top: 5px;
+}

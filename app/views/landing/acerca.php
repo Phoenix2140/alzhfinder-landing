@@ -23,7 +23,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis alias a voluptates necessitatibus possimus quis, esse accusantium placeat cum harum cumque modi consequatur laboriosam totam incidunt quas reprehenderit dolorum molestias!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab corporis iste, dicta numquam repudiandae? Beatae modi facilis, ullam doloremque eum culpa vero error explicabo ex veniam praesentium vel officiis illo!</p>
             </div><!--/.col-sm-6-->
             <div class="col-sm-6">
-                <h2>Qué acemos</h2>
+                <h2>Qué Hacemos</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quidem, quo sequi consequatur vel modi culpa blanditiis quisquam itaque temporibus sit neque commodi. Fugiat sequi, quisquam at? Repellat, sapiente, explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus, eos impedit at animi quod sit totam nobis eligendi enim nihil illo vitae consectetur minus saepe dolorum fugiat obcaecati! Vitae.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae suscipit at magnam nesciunt id animi reprehenderit, fuga doloribus. Ad officiis sequi illum distinctio voluptate sed sapiente dicta repellat veritatis accusantium.</p>
             </div><!--/.col-sm-6-->

@@ -51,12 +51,15 @@
                     <p>Mantente siempre informado sobre nuestra noticias!</p>
                     <form role="form">
                         <div class="input-group">
-                            <input type="text" class="form-control" autocomplete="off" placeholder="Ingresa tu email">
+                            <input type="email" class="form-control" name="news-mail" id="news-mail" autocomplete="off" placeholder="Ingresa tu email">
                             <span class="input-group-btn">
-                                <button class="btn btn-danger" type="button">Registrate</button>
+                                <button id="newsletter-btn" class="btn btn-danger" type="sbmit">Registrate</button>
                             </span>
                         </div>
                     </form>
+                    <div id="post-msg-news">
+                        
+                    </div>
                 </div> <!--/.col-md-3-->
                 <div class="col-md-3 col-sm-6">
                     <h4>Búscanos en la redes sociales</h4>
@@ -98,6 +101,9 @@
         </div>
     </footer><!--/#footer-->
 
+    <script>
+        var baseUrl = "<?php echo $baseUrl; ?>";
+    </script>
     <script src="<?php echo $baseUrl; ?>/js/jquery.js"></script>
     <script src="<?php echo $baseUrl; ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo $baseUrl; ?>/js/main.min.js"></script>
