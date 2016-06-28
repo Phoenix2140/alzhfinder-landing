@@ -50,6 +50,9 @@
 
 		}
 
+		/**
+		 * Función para crear un nuevo contacto
+		 */
 		public function createContact($post){
 			if($this->validateContact($post)){
 
