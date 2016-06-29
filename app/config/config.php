@@ -28,7 +28,7 @@ $config->set('baseUrl', 'http://landing-alzh.rhcloud.com'); // Página web base 
 $config->set('deep', 1); // Página web base a la que pertenece
  
 $config->set('adapter', 'mysql'); // Driver de base de datos (puede cambiar a los drives que se mencionan en config/loader.php)
-$config->set('host', '$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT'); // Dirección del servidor de la Base de datos
+$config->set('host', getenv(OPENSHIFT_MYSQL_DB_HOST).':'.getenv(OPENSHIFT_MYSQL_DB_PORT)); // Dirección del servidor de la Base de datos
 $config->set('username', 'adminxTd1Vz8'); // Usuario de la Base de datos
 $config->set('password', '6wq-kRKerQdv'); // Contraseña de la base de datos
 $config->set('dbname', 'landing'); // Nombre de la base de datos
