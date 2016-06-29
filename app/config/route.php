@@ -77,6 +77,15 @@
 				
 				$contacto->indexAction();
 				break; // Se finaliza el switch
+
+			case 'test':
+				var_dump(getenv(OPENSHIFT_MYSQL_DB_HOST));
+
+				var_dump($OPENSHIFT_MYSQL_DB_HOST);
+
+				var_dump('$OPENSHIFT_MYSQL_DB_HOST');
+				
+				break;
 			
 			default:
 				$error404->indexAction();
