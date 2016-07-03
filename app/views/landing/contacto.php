@@ -24,16 +24,16 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="form-group">
-                                <input type="text" name="nombre" class="form-control" required="required" placeholder="Nombre">
+                                <input type="text" id="nombre" name="nombre" class="form-control" required="required" placeholder="Nombre">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="fono" class="form-control" required="required" placeholder="Fono">
+                                <input type="text" id="fono" name="fono" class="form-control" required="required" placeholder="Fono">
                             </div>
                             <div class="form-group">
-                                <input type="email" name="mail" class="form-control" required="required" placeholder="Email">
+                                <input type="email" id="mail" name="mail" class="form-control" required="required" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                                <button id="btn-contacto" type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
                             </div>
                         </div>
                         <div class="col-sm-7">
@@ -41,6 +41,11 @@
                         </div>
                     </div>
                 </form>
+                <div class="row">
+                    <div id="contacto-msg" class="col-xs-12">
+                        <!--Contenedor para los mensajes-->
+                    </div>
+                </div>
             </div><!--/.col-sm-8-->
             <div class="col-sm-4">
                 <h4>Donde encontrarnos</h4>

@@ -3,6 +3,7 @@
 	class Contacto{
 		private $config;
 		private $view;
+		private $contactos;
 
 		/**
 		 * Constructor del controlador que recibe como
@@ -21,6 +22,9 @@
 			 */
 			require_once($this->config->get('baseDir').'Template.php');
 			$this->view = new Template();
+
+			require_once($this->config->get('modelsDir').'Contactos.php');
+			$this->contactos = new Contactos($config);
 		}
 
 		public function indexAction(){
@@ -56,10 +60,10 @@
 		public function createContact($post){
 			if($this->validateContact($post)){
 
-
-				echo json_encode(array('result' => true));
+				$this->contactos->crearContacto($post["nombre"] , $post["fono"], $post["email"], $post["mensaje"]);
+				echo json_encode(array('response' => true));
 			}else{
-				echo json_encode(array('result' => false));
+				echo json_encode(array('response' => false));
 			}
 		}
 

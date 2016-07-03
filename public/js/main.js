@@ -81,6 +81,27 @@ jQuery(function($) {
 		
 	});
 
+	$("#btn-contacto").click(function(event) {
+		event.preventDefault();
+
+		$.ajax({
+		  url: '',
+		  type: 'POST',
+		  dataType: 'json',
+		  data: {nombre: $("#nombre").val(), fono: $("#fono").val(), email: $("#mail").val(), mensaje: $("#message").val()},
+		  success: function(data) {
+		  	var mensaje = "";
+		    if (data.response) {
+		    	mensaje = msgNewsletter('success', '<strong>Gracias!</strong>, nos ha llegado tu contacto, pronto nos comunicaremos contigo.');
+		    } else {
+		    	mensaje = msgNewsletter('danger', 'Ha ocurrido un <strong>error</strong>, verifique sus dato e intente nuevamente.');
+		    }
+		    $("#contacto-msg").html(mensaje);
+		  }
+		});
+		
+	});
+
 	function msgNewsletter(tipo, texto){
 		var str = '<div class="alert alert-'+tipo+'"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'+texto+'</div>';
 		return str;
