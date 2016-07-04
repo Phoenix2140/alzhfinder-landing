@@ -27,6 +27,9 @@
 	require_once($config->get('controllersDir').'Newsletter.php');
 	$newsletter = new Newsletter($config);
 
+	require_once($config->get('controllersDir').'Login.php');
+	$login = new Login($config);
+
 	
 	/**
 	 * Se separan las rutas por los métodos GET y POST
@@ -78,13 +81,9 @@
 				$contacto->indexAction();
 				break; // Se finaliza el switch
 
-			case 'test':
-				var_dump(getenv(OPENSHIFT_MYSQL_DB_HOST));
-
-				var_dump($OPENSHIFT_MYSQL_DB_HOST);
-
-				var_dump('$OPENSHIFT_MYSQL_DB_HOST');
+			case 'login':
 				
+				$login->indexAction();
 				break;
 			
 			default:
@@ -103,10 +102,19 @@
 				
 				$contacto->createContact($_POST);
 				break;
+
 			case 'news':
 				//Crear Controlador News
 				$newsletter->ingresarEmail($_POST);
 				
+				break;
+
+			case 'login':
+				$login->login($_POST);
+				break;
+
+			case 'login':
+				# code...
 				break;
 			default:
 				echo json_encode(array('response' => false));

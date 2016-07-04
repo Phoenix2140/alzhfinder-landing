@@ -93,10 +93,39 @@ jQuery(function($) {
 		  	var mensaje = "";
 		    if (data.response) {
 		    	mensaje = msgNewsletter('success', '<strong>Gracias!</strong>, nos ha llegado tu contacto, pronto nos comunicaremos contigo.');
+
+		    	$("#nombre").val("");
+		    	$("#fono").val("");
+		    	$("#mail").val("");
+		    	$("#message").val("");
+		    	
 		    } else {
 		    	mensaje = msgNewsletter('danger', 'Ha ocurrido un <strong>error</strong>, verifique sus dato e intente nuevamente.');
 		    }
 		    $("#contacto-msg").html(mensaje);
+		  }
+		});
+		
+	});
+
+	$("#btn-login").click(function(event) {
+		event.preventDefault();
+
+		$.ajax({
+		  url: '',
+		  type: 'POST',
+		  dataType: 'json',
+		  data: {usuario: $("#usuario").val(), pass: $("#pass").val()},
+		  success: function(data) {
+		  	var mensaje = "";
+		    
+		    if (data.response) {
+		    	window.location.replace(baseUrl+'/panel');
+		    } else {
+		    	mensaje = msgNewsletter('danger', 'Ha ocurrido un <strong>error</strong>, verifique sus dato e intente nuevamente.');
+		    }
+
+		    $("#msg-login").html(mensaje);
 		  }
 		});
 		
