@@ -19,13 +19,11 @@
         <div class="row">
             <div class="col-sm-6">
                 <h2>Quienes somos</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ex ipsa vitae, ullam inventore illum corrupti, delectus beatae dolore sed, libero praesentium adipisci tempore quam maxime a! Sequi, vel, animi?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis alias a voluptates necessitatibus possimus quis, esse accusantium placeat cum harum cumque modi consequatur laboriosam totam incidunt quas reprehenderit dolorum molestias!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab corporis iste, dicta numquam repudiandae? Beatae modi facilis, ullam doloremque eum culpa vero error explicabo ex veniam praesentium vel officiis illo!</p>
+                <p>Somos un equipo multidisciplinario, preocupados por mejorar la calidad de vida de las personas.</p>
             </div><!--/.col-sm-6-->
             <div class="col-sm-6">
                 <h2>Qué Hacemos</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quidem, quo sequi consequatur vel modi culpa blanditiis quisquam itaque temporibus sit neque commodi. Fugiat sequi, quisquam at? Repellat, sapiente, explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repellendus, eos impedit at animi quod sit totam nobis eligendi enim nihil illo vitae consectetur minus saepe dolorum fugiat obcaecati! Vitae.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae suscipit at magnam nesciunt id animi reprehenderit, fuga doloribus. Ad officiis sequi illum distinctio voluptate sed sapiente dicta repellat veritatis accusantium.</p>
+                <p>Desarrollamos tecnologías que ayudan a las personas a cuidar de sus seres queridos que tengan alguna discapacidad mental como el alzheimer.</p>
             </div><!--/.col-sm-6-->
         </div><!--/.row-->
 
@@ -38,7 +36,7 @@
             <div class="col-md-4 col-xs-12">
                 <div class="center">
                     <p><img class="img-responsive img-thumbnail img-circle" src="images/team.png" alt="" ></p>
-                    <h5>Nombre integrante<small class="designation muted">Cargo en equipo</small></h5>
+                    <h5>Yerlin<small class="designation muted">Jefe de Proyecto</small></h5>
                     <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
                     <a class="btn btn-social btn-facebook" href="#"><i class="fa fa-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="fa fa-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="fa fa-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
                 </div>
@@ -47,7 +45,7 @@
             <div class="col-md-4 col-xs-12">
                 <div class="center">
                     <p><img class="img-responsive img-thumbnail img-circle" src="images/team.png" alt="" ></p>
-                    <h5>Nombre integrante<small class="designation muted">Cargo en equipo</small></h5>
+                    <h5>Mauricio Cortes<small class="designation muted">Director de Márketing</small></h5>
                     <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
                     <a class="btn btn-social btn-facebook" href="#"><i class="fa fa-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="fa fa-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="fa fa-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
                 </div>
@@ -55,7 +53,7 @@
             <div class="col-md-4 col-xs-12">
                 <div class="center">
                     <p><img class="img-responsive img-thumbnail img-circle" src="images/team.png" alt="" ></p>
-                    <h5>Nombre integrante<small class="designation muted">Cargo en equipo</small></h5>
+                    <h5>Héctor Álvarez<small class="designation muted">Jefe de Desarrolladores</small></h5>
                     <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
                     <a class="btn btn-social btn-facebook" href="#"><i class="fa fa-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="fa fa-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="fa fa-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
                 </div>
