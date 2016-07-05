@@ -25,20 +25,25 @@
 		}
 
 		public function indexAction(){
-			/**
-			 * Se crean las variables para el título, la dirección base y el navbar
-			 */
-			$this->view->titulo = "Alzhfinder | Localiza a tus seres queridos donde sea";
-			$this->view->baseUrl = $this->config->get("baseUrl");
-			$this->view->navVar = "";
+			if(isset($_SESSION["id"])){
+				header('Location: '.$this->config->get('baseUrl').'/panel');
+			}else{
+				/**
+				 * Se crean las variables para el título, la dirección base y el navbar
+				 */
+				$this->view->titulo = "Alzhfinder | Localiza a tus seres queridos donde sea";
+				$this->view->baseUrl = $this->config->get("baseUrl");
+				$this->view->navVar = "";
 
-			/**
-			 * Agregamos los bloques a la vista
-			 */
-			$this->view->menu = $this->view->render($this->config->get('viewsDir').'landing/menu.php');
-			$this->view->content = $this->view->render($this->config->get('viewsDir').'landing/login.php');
+				/**
+				 * Agregamos los bloques a la vista
+				 */
+				$this->view->menu = $this->view->render($this->config->get('viewsDir').'landing/menu.php');
+				$this->view->content = $this->view->render($this->config->get('viewsDir').'landing/login.php');
 
-			echo $this->view->render($this->config->get('viewsDir').'main.php');
+				echo $this->view->render($this->config->get('viewsDir').'main.php');
+
+			}
 
 		}
 

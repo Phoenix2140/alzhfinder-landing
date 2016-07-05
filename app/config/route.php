@@ -30,6 +30,15 @@
 	require_once($config->get('controllersDir').'Login.php');
 	$login = new Login($config);
 
+	require_once($config->get('controllersDir').'Panel.php');
+	$panel = new Panel($config);
+
+	require_once($config->get('controllersDir').'NoticiasController.php');
+	$noticias = new NoticiasController($config);
+
+	require_once($config->get('controllersDir').'ContactosController.php');
+	$contactos = new ContactosController($config);
+
 	
 	/**
 	 * Se separan las rutas por los métodos GET y POST
@@ -84,6 +93,31 @@
 			case 'login':
 				
 				$login->indexAction();
+				break;
+
+			case 'panel':
+				/**
+				 * Si panel tiene un submenu se invoca el switch,
+				 * sino abre invoca a indexAction()
+				 */
+				if(isset($enlace[$config->get('deep')+1])){
+					switch ($enlace[$config->get('deep')+1]) {
+						case 'noticias':
+							
+							$noticias->indexAction();
+							break;
+						case 'contactos':
+							
+							$contactos->indexAction();
+							break;
+						
+						default:
+							$error404->indexAction();
+							break;
+					}
+				}else{
+					$panel->indexAction();
+				}
 				break;
 			
 			default:

@@ -40,7 +40,7 @@
 		public function getContactos(){
 			$this->db->query("SELECT * FROM contactos");
 
-			$this->db->resultSet();
+			return $this->db->resultSet();
 
 		}
 
@@ -52,7 +52,7 @@
 
 			$this->db->bind(':contactado', false);
 
-			$this->db->resultSet();
+			return $this->db->resultSet();
 
 		}
 
@@ -64,7 +64,7 @@
 
 			$this->db->bind(':contactado', true);
 
-			$this->db->resultSet();
+			return $this->db->resultSet();
 
 		}
 
@@ -76,7 +76,7 @@
 
 			$this->db->bind(':id', $id);
 
-			$this->db->single();
+			return $this->db->single();
 
 		}
 
