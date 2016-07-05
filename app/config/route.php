@@ -156,7 +156,7 @@
 							break;
 						case 'contactos':
 							
-							$contactos->indexAction();
+							$contactos->contactar($_POST);
 							break;
 						
 						default:

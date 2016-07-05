@@ -17,7 +17,7 @@
 		}
 
 		public function crearContactado($titulo, $mensaje, $contacto, $usuario){
-			$this->db->query("INSERT INTO contactados (titulo, mensaje, id_contactos, id_usuario)
+			$this->db->query("INSERT INTO contactados (titulo, mensaje, id_contactos, id_usuarios)
 				VALUES (:titulo, :mensaje, :contacto, :usuario)");
 
 			$this->db->bind(':titulo', $titulo);

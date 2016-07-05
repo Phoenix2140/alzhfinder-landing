@@ -225,3 +225,16 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+.btn-contacto{
+    text-decoration: none;
+    color: #999;
+}
+.btn-contacto:hover{
+    text-decoration: none;
+    color: #000;
+}
+.btn-contacto:active{
+    text-decoration: none;
+    color: #000;   
+}

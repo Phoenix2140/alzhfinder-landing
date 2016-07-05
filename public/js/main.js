@@ -157,6 +157,28 @@ jQuery(function($) {
 		
 	});
 
+	//Sección contactar del panel
+	$(".btn-contactar").click(function(event) {
+		event.preventDefault();
+		var id = $(this).val();
+
+		$.ajax({
+		  url: baseUrl+'/panel/contactos',
+		  type: 'POST',
+		  dataType: 'json',
+		  data: { contacto: id, titulo: $("#titulo-"+id).val(), 
+		        mensaje: $("#mensaje-"+id).val(), email: $("#email-"+id).val()},
+		  success: function(data) {
+		    if(data.response){
+				window.location.replace(baseUrl+'/panel/contactos');
+		    }else{
+				$("#msg-contacto-"+id).html(msgNewsletter('danger', 'Ha ocurrido un <strong>error</strong>, verifique los campos e intente nuevamente.'));
+		    }
+		  }
+		});
+		
+	});
+
 
 	tinymce.init({
 	  selector: '.tinymce-msg',

@@ -20,6 +20,10 @@
 
 		}
 
+		public function correoSimple($email, $destinatario, $titulo, $mensaje){
+			$this->sendMail($email, $destinatario, $titulo, $mensaje);
+		}
+
 		private function obtenerListaCorreos(){
 			$emails = "";
 

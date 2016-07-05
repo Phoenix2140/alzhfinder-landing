@@ -7,6 +7,7 @@
 		private $view;
 		private $contactos;
 		private $contactados;
+		private $email;
 
 		public function __construct($config){
 			$this->config = $config;
@@ -20,6 +21,9 @@
 			require_once($this->config->get('modelsDir').'Contactados.php');
 			$this->contactados = new Contactados($this->config);
 
+			require_once($this->config->get('controllersDir').'EmailController.php');
+			$this->email = new EmailController($this->config);
+
 		}
 
 		public function indexAction(){
@@ -30,6 +34,17 @@
 				$this->view->titulo = "Alzhfinder | Localiza a tus seres queridos donde sea";
 				$this->view->baseUrl = $this->config->get("baseUrl");
 				$this->view->navBar = "contactos";
+
+				/**
+				 * Obtenemos los nuevos contactos para incluir en el área de notificación (campanita)
+				 */
+				$this->view->nuevosContactos = $this->contarContactos($this->contactos->getContactosUn()); //Contamos los No atendidos
+
+				/**
+				 * Obtenemos los contactos
+				 */
+				$this->view->listaContactos = $this->contactos->getContactosUn();
+				$this->view->listaContactados = $this->contactos->getContactosAt();
 
 
 				/**
@@ -46,6 +61,58 @@
 			}else{
 				header('Location: '.$this->config->get('baseUrl').'/login');
 			}
+		}
+
+		public function contactar($post){
+			if (isset($_SESSION["id"])) {
+				if($this->verificarDatos($post)){
+
+
+					/**
+					 * Agregar el contacto en la DDBB
+					 */
+					$this->contactados->crearContactado( $post["titulo"], $post["mensaje"], $post["contacto"], $_SESSION["id"]);
+
+					/**
+					 * Enviar Email
+					 */
+					$this->email->correoSimple($_SESSION["email"], $post["email"], $post["titulo"], $post["mensaje"]);
+					
+					/**
+					 * Marcar el contacto como "contactado"
+					 */
+					$this->contactos->updateContactoID($post["contacto"]);
+
+					echo json_encode(array('response' => true));
+				}else{
+					echo json_encode(array('response' => false));
+				}
+			}else{
+				echo json_encode(array('response' => false));
+			}
+		}
+
+		public function verificarDatos($post){
+			if( (isset($post["contacto"]) && !is_null($post["contacto"])) && 
+				(isset($post["titulo"]) && !is_null($post["titulo"])) && 
+				(isset($post["mensaje"]) && !is_null($post["mensaje"]) &&
+					( isset($post["email"])&& !is_null($post["email"])))){
+
+				return true;
+			}else{
+
+				return false;
+			}
+		}
+
+		public function contarContactos($contactos){
+			$contador = 0;
+
+			foreach ($contactos as $contacto) {
+				++$contador;
+			}
+
+			return $contador;
 		}
 	}
  ?>
