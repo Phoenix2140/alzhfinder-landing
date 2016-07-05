@@ -106,9 +106,15 @@
 							
 							$noticias->indexAction();
 							break;
+							
 						case 'contactos':
 							
 							$contactos->indexAction();
+							break;
+
+						case 'salir':
+							session_destroy();
+							header("Location: ".$config->get('baseUrl'));
 							break;
 						
 						default:

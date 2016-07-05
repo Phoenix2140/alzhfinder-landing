@@ -66,24 +66,28 @@
 		public function contactar($post){
 			if (isset($_SESSION["id"])) {
 				if($this->verificarDatos($post)){
+					if(!$this->comprobarRespuesta($post["contacto"])){
+						/**
+						 * Agregar el contacto en la DDBB
+						 */
+						$this->contactados->crearContactado( $post["titulo"], $post["mensaje"], $post["contacto"], $_SESSION["id"]);
 
+						/**
+						 * Enviar Email
+						 */
+						$this->email->correoSimple($_SESSION["email"], $post["email"], $post["titulo"], $post["mensaje"]);
+						
+						/**
+						 * Marcar el contacto como "contactado"
+						 */
+						$this->contactos->updateContactoID($post["contacto"]);
 
-					/**
-					 * Agregar el contacto en la DDBB
-					 */
-					$this->contactados->crearContactado( $post["titulo"], $post["mensaje"], $post["contacto"], $_SESSION["id"]);
+						echo json_encode(array('response' => true));
 
-					/**
-					 * Enviar Email
-					 */
-					$this->email->correoSimple($_SESSION["email"], $post["email"], $post["titulo"], $post["mensaje"]);
+					}else{
+						echo json_encode(array('response' => false));	
+					}
 					
-					/**
-					 * Marcar el contacto como "contactado"
-					 */
-					$this->contactos->updateContactoID($post["contacto"]);
-
-					echo json_encode(array('response' => true));
 				}else{
 					echo json_encode(array('response' => false));
 				}
@@ -113,6 +117,15 @@
 			}
 
 			return $contador;
+		}
+
+		public function comprobarRespuesta($id){
+			$contact = $this->contactos->getContactoID($id);
+			if($contact["contactado"]){
+				return true;
+			}else{
+				return false;
+			}
 		}
 	}
  ?>
