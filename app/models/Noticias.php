@@ -51,6 +51,16 @@
 		}
 
 		/**
+		 * Obtenemos las últimas 5 noticias opor orden Descendente, 
+		 * para mostrar lo último primero
+		 */
+		public function getUltimasNoticias(){
+			$this->db->query("SELECT * FROM noticias ORDER BY id_noticias DESC LIMIT 5");
+
+			return $this->db->resultSet();
+		}
+
+		/**
 		 * Obtenemos una noticia por su ID
 		 */
 		public function getNoticiaID($id){
@@ -59,6 +69,17 @@
 			$this->db->bind(':id', $id);
 
 			return $this->db->single();
+		}
+
+		/**
+		 * Obtener las noticias por usuario
+		 */
+		public function getNoticiasUserID($usuario){
+			$this->db->query("SELECT * FROM noticias WHERE id_usuarios=:usuario");
+
+			$this->db->bind(':usuario', $usuario);
+
+			return $this->db->resultSet();
 		}
 
 		/**

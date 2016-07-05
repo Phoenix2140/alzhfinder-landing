@@ -50,6 +50,11 @@
     </div>
     <!-- /#wrapper -->
 
+
+    <script>
+        var baseUrl = "<?php echo $baseUrl; ?>";
+    </script>
+    
     <!-- jQuery -->
     <script src="<?php echo $baseUrl; ?>/js/jquery.js"></script>
 

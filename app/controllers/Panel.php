@@ -6,8 +6,14 @@
 	Class Panel{
 		private $config;
 		private $view;
+
+		/**
+		 * Models
+		 */
 		private $contactos;
 		private $contactados;
+		private $news;
+		private $noticias;
 
 		//construct
 		public function __construct($config){
@@ -30,6 +36,12 @@
 			require_once($this->config->get('modelsDir').'Contactados.php');
 			$this->contactados = new Contactados($this->config);
 
+			require_once($this->config->get('modelsDir').'News.php');
+			$this->news = new News($this->config);
+
+			require_once($this->config->get('modelsDir').'Noticias.php');
+			$this->noticias = new Noticias($this->config);
+
 		}
 
 		public function indexAction(){
@@ -40,7 +52,7 @@
 				 */
 				$this->view->titulo = "Alzhfinder | Localiza a tus seres queridos donde sea - Panel";
 				$this->view->baseUrl = $this->config->get("baseUrl");
-				$this->view->navVar = "panel";
+				$this->view->navBar = "panel";
 
 				/**
 				 * Obtenemos los contactos, tanto los atendidos como los no atendidos
@@ -49,12 +61,25 @@
 				$this->view->contactosAtendidos = $this->contactos->getContactosAt();
 
 				/**
+				 * Obtenemos las ultimas noticias, los últimos inscritos y los últimos
+				 * contactos que se han atendido
+				 */
+				$this->view->ultimasNoticias = $this->noticias->getUltimasNoticias();
+				$this->view->ultimosInscritos = $this->news->getLast();
+				$this->view->ultimosAtendidos = $this->contactados->obtenerUltimosContactados();
+
+
+				/**
 				 * Contamos los contactos NO atendidos y los contactos atendidos 
 				 * por un determinado usuario (usuario actual)
 				 */
-				$this->view->nuevosContactos = $this->contarContactos($this->view->contactosSinAtender); //Contamos los No atendidos
-				$this->view->viejosContactos = $this->contarContactos($this->view->contactosAtendidos); // Contamos los contactos atendidos
+				$this->view->nuevosContactos = $this->contarDB($this->view->contactosSinAtender); //Contamos los No atendidos
+				$this->view->viejosContactos = $this->contarDB($this->view->contactosAtendidos); // Contamos los contactos atendidos
 				$this->view->misAtendidos = $this->contarAtendidosPorUsuario($_SESSION["id"]);
+
+				$this->view->suscritosNewsletter = $this->contarDB($this->news->getEmails());
+				$this->view->misNoticias = $this->contarDB($this->noticias->getNoticiasUserID($_SESSION["id"]));
+				$this->view->noticiasEnviadas = $this->contarDB($this->noticias->getNoticias());
 
 				/**
 				 * Se crea una variable (especial) que contiene una vista
@@ -72,7 +97,7 @@
 			}
 		}
 
-		public function contarContactos($contactos){
+		public function contarDB($contactos){
 			$contador = 0;
 
 			foreach ($contactos as $contacto) {

@@ -59,13 +59,13 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li <?php if($navBar == 'panel'){ echo "class=\"active\"";} ?>>
                         <a href="<?php echo $baseUrl; ?>/panel"><i class="fa fa-fw fa-dashboard"></i> Panel de control</a>
                     </li>
-                    <li>
+                    <li <?php if($navBar == 'contactos'){ echo "class=\"active\"";} ?>>
                         <a href="<?php echo $baseUrl; ?>/panel/contactos"><i class="fa fa-fw fa-table"></i> Contactos</a>
                     </li>
-                    <li>
+                    <li <?php if($navBar == 'noticias'){ echo "class=\"active\"";} ?>>
                         <a href="<?php echo $baseUrl; ?>/panel/noticias"><i class="fa fa-fw fa-edit"></i> Noticias</a>
                     </li>
                 </ul>

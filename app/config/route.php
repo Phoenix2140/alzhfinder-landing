@@ -147,8 +147,23 @@
 				$login->login($_POST);
 				break;
 
-			case 'login':
-				# code...
+			case 'panel':
+				if(isset($enlace[$config->get('deep')+1])){
+					switch ($enlace[$config->get('deep')+1]) {
+						case 'noticias':
+							
+							$noticias->enviarNoticia($_POST);
+							break;
+						case 'contactos':
+							
+							$contactos->indexAction();
+							break;
+						
+						default:
+							$error404->indexAction();
+							break;
+					}
+				}
 				break;
 			default:
 				echo json_encode(array('response' => false));

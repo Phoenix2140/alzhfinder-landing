@@ -29,7 +29,7 @@
 				 */
 				$this->view->titulo = "Alzhfinder | Localiza a tus seres queridos donde sea";
 				$this->view->baseUrl = $this->config->get("baseUrl");
-				$this->view->navVar = "home";
+				$this->view->navBar = "contactos";
 
 
 				/**

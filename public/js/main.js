@@ -59,6 +59,7 @@ jQuery(function($) {
 	// 	social_tools: false
 	// });	
 
+	//Inscribirse al newsletter
 	$("#newsletter-btn").click(function(event) {
 		event.preventDefault();
 
@@ -81,11 +82,12 @@ jQuery(function($) {
 		
 	});
 
+	//Enviar el formulario de contacto
 	$("#btn-contacto").click(function(event) {
 		event.preventDefault();
 
 		$.ajax({
-		  url: '',
+		  url: baseUrl+'/contacto',
 		  type: 'POST',
 		  dataType: 'json',
 		  data: {nombre: $("#nombre").val(), fono: $("#fono").val(), email: $("#mail").val(), mensaje: $("#message").val()},
@@ -108,11 +110,12 @@ jQuery(function($) {
 		
 	});
 
+	// Sección para ingresar a la plataforma
 	$("#btn-login").click(function(event) {
 		event.preventDefault();
 
 		$.ajax({
-		  url: '',
+		  url: baseUrl+'/login',
 		  type: 'POST',
 		  dataType: 'json',
 		  data: {usuario: $("#usuario").val(), pass: $("#pass").val()},
@@ -122,7 +125,7 @@ jQuery(function($) {
 		    if (data.response) {
 		    	window.location.replace(baseUrl+'/panel');
 		    } else {
-		    	mensaje = msgNewsletter('danger', 'Ha ocurrido un <strong>error</strong>, verifique sus dato e intente nuevamente.');
+		    	mensaje = msgNewsletter('danger', 'Ha ocurrido un <strong>error</strong>, verifique sus datos e intente nuevamente.');
 		    }
 
 		    $("#msg-login").html(mensaje);
@@ -130,6 +133,30 @@ jQuery(function($) {
 		});
 		
 	});
+
+	// Sección para crear noticias
+	$("#btn-enviar-noticia").click(function(event) {
+		event.preventDefault();
+		var radio = $('input[name=email-radio]:checked', '#Formulario-noticia').val();		
+
+		$.ajax({
+		  url: baseUrl+'/panel/noticias',
+		  type: 'POST',
+		  dataType: 'json',
+		  data: {email: radio, 
+		  		titulo: $("#titulo-noticia").val(), 
+		  		mensaje: tinymce.get('mensaje-noticia').getContent()},
+		  success: function(data) {
+		    if(data.response){
+		    	window.location.replace(baseUrl+'/panel/noticias');
+		    }else{
+		    	$("#msg-news").html(msgNewsletter('danger', 'Ha ocurrido un <strong>error</strong>, verifique los campos e intente nuevamente.'));
+		    }
+		  }
+		});
+		
+	});
+
 
 	tinymce.init({
 	  selector: '.tinymce-msg',

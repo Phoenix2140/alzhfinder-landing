@@ -36,6 +36,15 @@
 		}
 
 		/**
+		 * Obtenemos los ultimos email inscritos
+		 */
+		public function getLast(){
+			$this->db->query("SELECT * FROM news ORDER BY id_news DESC LIMIT 5");
+
+			return $this->db->resultSet();
+		}
+
+		/**
 		 * Función para eliminar una entrada deseada
 		 * por su ID
 		 */

@@ -35,7 +35,7 @@
                                 <h3 class="panel-title">Crear Nueva noticia</h3>
                             </div>
                             <div class="panel-body">
-                                <form action="" method="POST" class="form-horizontal" role="form">
+                                <form id="Formulario-noticia" action="" method="POST" class="form-horizontal" role="form">
                                     <label>Seleccione el correo que desea ocupar</label>
                                         <div class="radio">
                                             <label>
@@ -51,22 +51,25 @@
                                     <label>Título de la noticia</label>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Ingrese el título de la noticia ACÁ">
+                                            <input type="text" class="form-control" name="titulo-noticia" id="titulo-noticia" placeholder="Ingrese el título de la noticia ACÁ">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <textarea name="" id="input" class="form-control tinymce-msg" rows="3" required="required"></textarea>
+                                            <textarea name="mensaje-noticia" id="mensaje-noticia" class="form-control tinymce-msg" rows="3" required="required"></textarea>
                                             
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-4 col-sm-offset-4">
-                                            <button type="submit" class="btn btn-primary btn-block">Enviar Noticia</button>
+                                            <button id="btn-enviar-noticia" type="submit" class="btn btn-primary btn-block">Enviar Noticia</button>
                                         </div>
                                     </div>
                                 </form>
+                                <div id="msg-news">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>

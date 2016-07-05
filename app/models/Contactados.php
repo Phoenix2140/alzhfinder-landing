@@ -36,6 +36,12 @@
 
 		}
 
+		public function obtenerUltimosContactados(){
+			$this->db->query("SELECT * FROM contactados ORDER BY id_contactados DESC LIMIT 5");
+
+			return $this->db->resultSet();
+		}
+
 		public function obtenerContactadoID($id){
 			$this->db->query("SELECT * FROM contactados WHERE id_contactados=:id");
 
