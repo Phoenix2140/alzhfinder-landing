@@ -126,14 +126,16 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="center">
-                        <h2>Descarga el Alpha AHORA!</h2>
+                        <h2>Descarga el Alpha <strong>AHORA</strong> en desde google play</h2>
                     </div>
                     <div class="gap"></div>
                     <div class="row">
                         <div class="col-md-6">
-                            <p>Descarga el alpha abierto ahora, para ingregar los datos demo</p>
-                            <p>Usuario: demo</p>
-                            <p>Contraseña: 123</p>
+                            <blockquote>
+                                <p>Descarga el alpha abierto ahora, para ingregar los datos demo</p>
+                                <p>Usuario: demo</p>
+                                <p>Contraseña: 123</p>
+                            </blockquote>
                         </div>
                         <div class="col-md-6">
                             <a href="<?php echo $baseUrl; ?>/files/alzhfinder.apk"><img src="<?php echo $baseUrl; ?>/images/android.png" class="img-responsive"></a>
