@@ -43,9 +43,9 @@
 				 * Se crea una variable (especial) que contiene una vista
 				 * views/home.php, con los valores deseados
 				 */
-				$this->view->menu = $this->view->render($this->config->get('viewsDir').'landing/menu.php');
+				// $this->view->menu = $this->view->render($this->config->get('viewsDir').'landing/menu.php');
 
-				$this->view->content = $this->view->render($this->config->get('viewsDir').'landing/home.php');
+				// $this->view->content = $this->view->render($this->config->get('viewsDir').'landing/home.php');
 
 				/**
 				 * Luego se genera y junta toda la vista en 
@@ -53,7 +53,7 @@
 				 * en su interior todas las variables creadas anteriormente
 				 * incluso la vista parcial home.php
 				 */
-				echo $this->view->render($this->config->get('viewsDir').'main.php');
+				echo $this->view->render($this->config->get('viewsDir').'landing/newLanding.php');
 
 			}
 			

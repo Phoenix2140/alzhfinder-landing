@@ -1,0 +1,33 @@
+/*Estilo del logo*/
+.row{}.col-md-3{}.logo{
+	width:100%;height:auto;
+	}
+/*Estilo imagen de fondo*/
+.row.a{
+	background-image:url(../img/fondob.png); no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	}
+/*Letra en general*/
+.col-md-3{}.letra{
+	color:white;
+	font-weight:bold;
+}
+/*Estilo gradiante del thumbnail*/
+.row.b {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,7db9e8+18,1e5799+45,1e5799+63,7db9e8+85,7db9e8+100 */
+	background: #7db9e8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #7db9e8 0%, #7db9e8 18%, #1e5799 45%, #1e5799 63%, #7db9e8 85%, #7db9e8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #7db9e8 0%,#7db9e8 18%,#1e5799 45%,#1e5799 63%,#7db9e8 85%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #7db9e8 0%,#7db9e8 18%,#1e5799 45%,#1e5799 63%,#7db9e8 85%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+    box-shadow: 0 0 5px 10px #898989;
+}
+/*Estilo del footer*/
+address {
+    display: block;
+    font-style: italic;
+}
